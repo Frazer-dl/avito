@@ -5,7 +5,7 @@ import avito.assignment.redis.dao.EntityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Set;
 
 @Service
 public class EntityServiceImpl implements EntityService {
@@ -19,17 +19,16 @@ public class EntityServiceImpl implements EntityService {
     }
 
     @Override
-    public List<Entity> getAllKeys() {
+    public Set<Entity> getAllKeys() {
         return entityDao.getAllKeys();
     }
 
     @Override
-    public Entity getEntityById(String key) {
-        return entityDao.getEntityById(key);
-    }
+    public Entity getEntityById(String id) { return entityDao.getEntityById(id); }
 
     @Override
-    public boolean deleteEntity(String key) {
-        return entityDao.deleteEntity(key);
+    public boolean deleteEntity(String id) {
+        return entityDao.deleteEntity(id);
     }
+
 }

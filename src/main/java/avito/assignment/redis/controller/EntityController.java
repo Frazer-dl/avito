@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class EntityController {
@@ -26,24 +26,24 @@ public class EntityController {
     }
 
     @GetMapping("/entity")
-    public ResponseEntity<List<Entity>> fetchAllEntity() {
-        List<Entity> entities;
-        entities = entityService.getAllKeys();
+    public ResponseEntity<List<Entity>> getAllEntity() {
+        List<Entity> entities = new ArrayList<>(entityService.getAllKeys());
         return ResponseEntity.ok(entities);
     }
 
-    @GetMapping("/entity/{key}")
-    public ResponseEntity<Entity> fetchEntityById(@PathVariable("key") String key) {
+
+    @GetMapping("/entity/{id}")
+    public ResponseEntity<Entity> getEntityById(@PathVariable("id") String id) {
         Entity entity;
-        entity = entityService.getEntityById(key);
+        entity = entityService.getEntityById(id);
         return ResponseEntity.ok(entity);
     }
 
-    @DeleteMapping("/entity/{key}")
-    public ResponseEntity<String> delEntityById(@PathVariable("key") String key) {
-        boolean result = entityService.deleteEntity(key);
+    @DeleteMapping(value = "/entity/{id}")
+    public ResponseEntity<String> delEntityById(@PathVariable("id") String id) {
+        boolean result = entityService.deleteEntity(id);
         if (result) {
-            return ResponseEntity.ok("Entity created successfully!");
+            return ResponseEntity.ok("Entity deleted successfully!");
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
