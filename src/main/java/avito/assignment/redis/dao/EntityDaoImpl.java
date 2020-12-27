@@ -6,6 +6,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 import redis.clients.jedis.Jedis;
 
+import java.nio.ByteBuffer;
 import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -28,8 +29,7 @@ public class EntityDaoImpl implements EntityDao {
         try {
             redisTemplate.opsForHash().put(HASH_KEY, entity.getId(), entity.getEntityBody());
             if (ttlCheck(entity)) {
-                redisTemplate.expire(entity.getId(), entity.getTtl(), TimeUnit.MINUTES);
-                    return true;
+                redisTemplate.expire(HASH_KEY, entity.getTtl(), TimeUnit.SECONDS);
             }
             return true;
         } catch (Exception e) {
@@ -50,7 +50,7 @@ public class EntityDaoImpl implements EntityDao {
         Entity entity = new Entity();
         entity.setEntityBody(redisTemplate.opsForHash().get(HASH_KEY, id));
         entity.setId(id);
-        entity.setTtl(redisTemplate.getExpire(id));
+        entity.setTtl(redisTemplate.getExpire(HASH_KEY));
         return entity;
     }
 

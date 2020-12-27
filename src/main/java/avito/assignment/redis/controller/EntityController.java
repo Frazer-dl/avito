@@ -40,7 +40,7 @@ public class EntityController {
     }
 
     @GetMapping("/entity/save")
-    public ResponseEntity<String> saveDb(@RequestBody Entity entity) {
+    public ResponseEntity<String> saveDb() {
         boolean result = entityService.saveDb();
         if (result) {
             return ResponseEntity.ok("Dump saved successfully!");
