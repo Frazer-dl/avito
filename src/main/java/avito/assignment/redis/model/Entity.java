@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Data
 @RedisHash("Entity")
 public class Entity implements Serializable {
-    private String id;
+    private long id;
     private Object entityBody;
-    private Integer ttl;
+    private Long ttl;
 }

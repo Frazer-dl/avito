@@ -1,12 +1,8 @@
 avito/assignment/redis/RedisSpringBoot.class
-avito/assignment/redis/dto/StringEntityImpl.class
-avito/assignment/redis/dto/ListEntityImpl.class
-avito/assignment/redis/dao/EntityDao.class
-avito/assignment/redis/service/EntityService.class
 avito/assignment/redis/service/EntityServiceImpl.class
-avito/assignment/redis/dto/Entities.class
 avito/assignment/redis/controller/EntityController.class
+avito/assignment/redis/dao/EntityDao.class
 avito/assignment/redis/dao/EntityDaoImpl.class
 avito/assignment/redis/model/Entity.class
-avito/assignment/redis/dto/MapEntityImpl.class
+avito/assignment/redis/service/EntityService.class
 avito/assignment/redis/config/RedisConfig.class

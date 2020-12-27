@@ -24,11 +24,16 @@ public class EntityServiceImpl implements EntityService {
     }
 
     @Override
-    public Entity getEntityById(String id) { return entityDao.getEntityById(id); }
+    public Entity getEntityById(long id) { return entityDao.getEntityById(id); }
 
     @Override
-    public boolean deleteEntity(String id) {
+    public boolean deleteEntity(long id) {
         return entityDao.deleteEntity(id);
+    }
+
+    @Override
+    public boolean saveDb() {
+        return entityDao.saveDb();
     }
 
 }

@@ -10,8 +10,9 @@ public interface EntityService {
 
     Set<Entity> getAllKeys();
 
-    Entity getEntityById(String id);
+    Entity getEntityById(long id);
 
-    boolean deleteEntity(String id);
+    boolean deleteEntity(long id);
 
+    boolean saveDb();
 }
