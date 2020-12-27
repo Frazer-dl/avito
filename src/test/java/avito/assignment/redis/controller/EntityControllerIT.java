@@ -1,0 +1,69 @@
+package avito.assignment.redis.controller;
+
+import avito.assignment.redis.ITUtil;
+import avito.assignment.redis.dao.EntityDao;
+import avito.assignment.redis.model.Entity;
+import avito.assignment.redis.service.EntityService;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+import java.util.Set;
+
+
+class EntityControllerIT implements EntityDao, EntityService {
+
+    private final Entity entity = ITUtil.getEntity();
+    private final List<Entity> entityList = ITUtil.getEntities();
+
+    @Test
+    void saveEntity() {
+        saveEntity(entity);
+        List<Entity> entityList1 = ITUtil.getEntities();
+        entityList1.add(ITUtil.getEntity());
+        Assertions.assertEquals(entityList1, entityList);
+    }
+
+    @Test
+    void getEntityById() {
+        Entity entity = getEntityById(ITUtil.ID);
+        Assertions.assertEquals(ITUtil.getEntities().get(0).getId(), entity.getId());
+    }
+
+    @Test
+    void delEntityById() {
+        deleteEntity(ITUtil.ID);
+        Assertions.assertNotEquals(ITUtil.getEntities(), ITUtil.delEntity(ITUtil.ID));
+    }
+
+    @Override
+    public boolean saveEntity(Entity entity) {
+        entityList.add(entity);
+        return true;
+    }
+
+    @Override
+    public Set<Entity> getAllKeys() {
+        return null;
+    }
+
+    @Override
+    public Entity getEntityById(long id) {
+        for (Entity entity: ITUtil.getEntities()) {
+            if (id == entity.getId()) {
+                return entity;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public boolean deleteEntity(long id) {
+        return ITUtil.getEntities() != ITUtil.delEntity(ITUtil.ID);
+    }
+
+    @Override
+    public boolean saveDb() {
+        return true;
+    }
+}

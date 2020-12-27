@@ -1,7 +1,6 @@
 package avito.assignment.redis.client;
 
 import avito.assignment.redis.model.Entity;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.*;
 
@@ -13,7 +12,7 @@ public class RestClientImpl implements RestClient {
     private ResponseEntity<String> response;
     private HttpEntity<String> entity = new HttpEntity<>(headers);
 
-    private final String URL_CONSTANT = "http://localhost:8082/entity";
+    private static final String URL_CONSTANT = "http://localhost:8082/entity";
 
     public static void main(String[] args) {
         RestClientImpl restClient = new RestClientImpl();
@@ -25,11 +24,17 @@ public class RestClientImpl implements RestClient {
         restClient.operation("3", "/", HttpMethod.DELETE); //delete by id
         restClient.operation( "3","/", HttpMethod.GET); //get key by id (checking delete operation)
         restClient.operation("", "/save", HttpMethod.GET); //save dump file to directory
+        restClient.post(URL_CONSTANT, new Entity()); //post new entity
+        restClient.operation("1", "/", HttpMethod.GET); //save dump file to directory
     }
 
     @Override
     public void post(String url, Entity entity) {
-
+        entity.setId(1L);
+        entity.setEntityBody("[String1, String2]");
+        entity.setTtl(500L);
+        HttpEntity<Entity> request = new HttpEntity<>(entity, headers);
+        ResponseEntity<String> result = restTemplate.postForEntity(URL_CONSTANT, request, String.class);
     }
 
     @Override
