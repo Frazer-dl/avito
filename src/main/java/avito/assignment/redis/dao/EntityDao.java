@@ -15,4 +15,18 @@ public interface EntityDao {
     boolean deleteEntity(long id);
 
     boolean saveDb();
+
+    void setRedisTtl(long ttl);
+
+    boolean saveCache(Entity entity);
+
+    Set<Entity> getCacheAllKeys();
+
+    Entity getCacheById(long id);
+
+    boolean deleteCache(long id);
+
+    boolean saveCacheToDirectory();
+
+    void setCacheTtl(long ttl);
 }

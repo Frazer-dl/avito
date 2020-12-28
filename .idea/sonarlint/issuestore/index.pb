@@ -1,0 +1,19 @@
+
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+l
+<src/main/java/avito/assignment/redis/config/RedisConfig.java,5/a/5ad2b8a61ed517c8967baeade76c9388a35f31f0
+u
+Esrc/main/java/avito/assignment/redis/controller/EntityController.java,a/1/a1913642055c4060765073e2934ba93c4a51479f
+k
+;src/main/java/avito/assignment/redis/dao/EntityDaoImpl.java,2/f/2f91b8df78461105d707c57b6d468cdf07db03ac
+v
+Fsrc/test/java/avito/assignment/redis/connection/RedisConnectionIT.java,9/9/9956b78a3456e31af5e5651c56ca253dd8660acd
+w
+Gsrc/test/java/avito/assignment/redis/controller/EntityControllerIT.java,f/2/f2ffd18aff839e1165394ea293c028d5c7e3e613
+s
+Csrc/main/java/avito/assignment/redis/service/EntityServiceImpl.java,a/8/a80617b7994279cbeca863bd856d3c92cdaad9e5
+`
+0src/test/java/avito/assignment/redis/ITUtil.java,2/f/2fa0c32522ac000a0c2e9aaf5a742765e022397b
+o
+?src/main/java/avito/assignment/redis/client/RestClientImpl.java,1/d/1daf0ca1cbce0a5b34ee8da08be0db75ddba0c2c

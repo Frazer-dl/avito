@@ -1,5 +1,6 @@
 package avito.assignment.redis;
 
+import avito.assignment.redis.config.CacheHelper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,5 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RedisSpringBoot {
     public static void main(String[] args) {
         SpringApplication.run(RedisSpringBoot.class, args);
+    }
+
+    public static CacheHelper create() {
+        return new CacheHelper();
     }
 }

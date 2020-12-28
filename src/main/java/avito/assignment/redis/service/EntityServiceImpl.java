@@ -36,4 +36,39 @@ public class EntityServiceImpl implements EntityService {
         return entityDao.saveDb();
     }
 
+    @Override
+    public void setRedisTtl(long ttl) {
+        entityDao.setRedisTtl(ttl);
+    }
+
+    @Override
+    public boolean saveCache(Entity entity) {
+        return entityDao.saveCache(entity);
+    }
+
+    @Override
+    public Set<Entity> getCacheAllKeys() {
+        return entityDao.getCacheAllKeys();
+    }
+
+    @Override
+    public Entity getCacheById(long id) {
+        return entityDao.getCacheById(id);
+    }
+
+    @Override
+    public boolean deleteCache(long id) {
+        return entityDao.deleteCache(id);
+    }
+
+    @Override
+    public boolean saveCacheToDirectory() {
+        return entityDao.saveCacheToDirectory();
+    }
+
+    @Override
+    public void setCacheTtl(long ttl) {
+        entityDao.setCacheTtl(ttl);
+    }
+
 }

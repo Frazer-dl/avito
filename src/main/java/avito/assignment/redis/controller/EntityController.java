@@ -58,4 +58,57 @@ public class EntityController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
+
+    @PostMapping("/entity/ttl/{ttl}")
+    public void setRedisTtl(@PathVariable("ttl") long ttl) {
+        entityService.setRedisTtl(ttl);
+    }
+
+    @PostMapping("/cache")
+    public ResponseEntity<String> saveCache(@RequestBody Entity entity) {
+        boolean result = entityService.saveCache(entity);
+        if (result) {
+            return ResponseEntity.ok("Entity cached successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    @GetMapping("/cache")
+    public ResponseEntity<List<Entity>> getCacheAllEntity() {
+        List<Entity> entities = new ArrayList<>(entityService.getCacheAllKeys());
+        return ResponseEntity.ok(entities);
+    }
+
+    @GetMapping("/cache/{id}")
+    public ResponseEntity<Entity> getCacheById(@PathVariable("id") long id) {
+        Entity entity;
+        entity = entityService.getCacheById(id);
+        return ResponseEntity.ok(entity);
+    }
+
+    @GetMapping("/cache/save")
+    public ResponseEntity<String> saveCacheToDirectory() {
+        boolean result = entityService.saveCacheToDirectory();
+        if (result) {
+            return ResponseEntity.ok("Cache saved successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    @DeleteMapping(value = "/cache/{id}")
+    public ResponseEntity<String> deleteCache(@PathVariable("id") long id) {
+        boolean result = entityService.deleteCache(id);
+        if (result) {
+            return ResponseEntity.ok("Entity deleted successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    @PostMapping("/cache/ttl/{ttl}")
+    public void setCacheTtl(@PathVariable("ttl") long ttl) {
+        entityService.setCacheTtl(ttl);
+    }
 }

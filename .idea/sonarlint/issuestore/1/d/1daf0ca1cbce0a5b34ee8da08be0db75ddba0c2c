@@ -1,0 +1,8 @@
+
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(˜Š¿Ûüÿÿÿÿ
+r
+java:S1450"WRemove the "response" field and declare it as a local variable in the relevant methods.(É­Ø¡üÿÿÿÿ
+M
+java:S1481%"+Remove this unused "result" local variable.(°¥Ò†ıÿÿÿÿ8ëÀ«ê.
+\
+java:S1854%":Remove this useless assignment to local variable "result".(°¥Ò†ıÿÿÿÿ8ëÀ«ê.

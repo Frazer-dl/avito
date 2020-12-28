@@ -10,5 +10,4 @@ import java.io.Serializable;
 public class Entity implements Serializable {
     private long id;
     private Object entityBody;
-    private Long ttl;
 }

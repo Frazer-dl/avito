@@ -45,6 +45,13 @@
             <artifactId>jedis</artifactId>
             <version>3.4.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -20,7 +20,6 @@ public final class ITUtil {
         Entity entity = new Entity();
         entity.setId(ID);
         entity.setEntityBody(ENTITY_BODY);
-        entity.setTtl(TTL);
         return entity;
     }
 

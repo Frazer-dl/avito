@@ -66,4 +66,39 @@ class EntityControllerIT implements EntityDao, EntityService {
     public boolean saveDb() {
         return true;
     }
+
+    @Override
+    public void setRedisTtl(long ttl) {
+
+    }
+
+    @Override
+    public boolean saveCache(Entity entity) {
+        return false;
+    }
+
+    @Override
+    public Set<Entity> getCacheAllKeys() {
+        return null;
+    }
+
+    @Override
+    public Entity getCacheById(long id) {
+        return null;
+    }
+
+    @Override
+    public boolean deleteCache(long id) {
+        return false;
+    }
+
+    @Override
+    public boolean saveCacheToDirectory() {
+        return false;
+    }
+
+    @Override
+    public void setCacheTtl(long ttl) {
+
+    }
 }

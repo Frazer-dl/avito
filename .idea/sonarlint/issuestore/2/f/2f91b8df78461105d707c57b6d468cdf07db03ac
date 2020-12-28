@@ -1,0 +1,13 @@
+
+h	java:S116"SRename this field "HASH_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä®‰‘
+Q
+java:S1128"6Remove this unused import 'redis.clients.jedis.Jedis'.(úœÅıÿÿÿÿ
+K
+java:S1128	"0Remove this unused import 'java.nio.ByteBuffer'.(¿¢×±úÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(ä®‰‘
+J
+java:S1128
+"/Remove this unused import 'java.time.Duration'.(ëá¯‰üÿÿÿÿ
+n
+java:S2259F"SA "NullPointerException" could be thrown; "getConnectionFactory()" can return null.(í®Šµúÿÿÿÿ

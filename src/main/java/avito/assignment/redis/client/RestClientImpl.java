@@ -32,7 +32,6 @@ public class RestClientImpl implements RestClient {
     public void post(String url, Entity entity) {
         entity.setId(1L);
         entity.setEntityBody("[String1, String2]");
-        entity.setTtl(500L);
         HttpEntity<Entity> request = new HttpEntity<>(entity, headers);
         ResponseEntity<String> result = restTemplate.postForEntity(URL_CONSTANT, request, String.class);
     }
