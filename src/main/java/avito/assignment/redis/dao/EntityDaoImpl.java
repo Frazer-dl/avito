@@ -4,6 +4,8 @@ import avito.assignment.redis.ITUtil;
 import avito.assignment.redis.config.CacheHelper;
 import avito.assignment.redis.model.Entity;
 import org.ehcache.Cache;
+import org.ehcache.expiry.Expirations;
+import org.ehcache.xml.model.Expiry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;

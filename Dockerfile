@@ -5,17 +5,7 @@ ARG PROJECT_BUILD_NAME
 ENV PROJECT_BUILD_NAME=${PROJECT_BUILD_NAME}
 ENV JAR_FILE=target/assignment-0.0.1-SNAPSHOT.jar
 
-RUN addgroup --system --gid 1001 appuser
-RUN adduser --system --uid 1001 --group appuser
-
-RUN mkdir -p /var/avito/log
-RUN chown -R appuser:appuser /var/avito
-
 COPY ${JAR_FILE} ${JAR_FILE}
-
-EXPOSE 8082
-
-USER appuser
 
 ENTRYPOINT exec java \
 ${JAVA_XMX:--Xmx128m} \

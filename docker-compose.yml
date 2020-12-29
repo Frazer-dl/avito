@@ -1,17 +1,30 @@
-version: '2'
+version: '3'
+volumes:
+  avito_volume01:
+
 services:
   app:
     build: .
+    networks:
+      - spring
+    depends_on:
+      - redis
     ports:
-      - "8082:8082"
+      - "127.0.0.1:8082:8082"
     links:
-      - "redis:redis"
+      - "redis"
+    volumes:
+      - avito_volume01:/home/kgenov/avito/avito:ro
+
   redis:
     image: redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    command: [ "redis-server", "--protected-mode", "no" ]
     hostname: redis
-    ports:
-      - "6379:6379"
-  postman:
-    image: postman_docker_image
-    ports:
-    - "8081:8081"
+    networks:
+      - spring
+
+networks:
+  spring:
+    external: true

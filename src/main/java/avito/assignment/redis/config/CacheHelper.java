@@ -63,7 +63,7 @@ public class CacheHelper {
 
     public boolean saveToDirectory() {
         PersistentCacheManager persistentCacheManager = CacheManagerBuilder.newCacheManagerBuilder()
-                .with(CacheManagerBuilder.persistence(ITUtil.STORAGE_PATH + File.separator + "cache_dump"))
+                .with(CacheManagerBuilder.persistence(ITUtil.STORAGE_PATH + File.separator + "cash_dump"))
                 .withCache("persistent-cache", CacheConfigurationBuilder
                         .newCacheConfigurationBuilder(Long.class, String.class, ResourcePoolsBuilder.newResourcePoolsBuilder()
                                 .heap(10, EntryUnit.ENTRIES)
@@ -71,7 +71,7 @@ public class CacheHelper {
 
         persistentCacheManager.close();
 
-        File f = new File(ITUtil.STORAGE_PATH + File.separator + "cache_dump");
+        File f = new File(ITUtil.STORAGE_PATH + File.separator + "cash_dump");
         return f.exists() && !f.isDirectory();
     }
 }
