@@ -14,7 +14,7 @@ https://github.com/avito-tech/geo-backend-trainee-assignment/blob/main/README.md
 
 1.3 Финальную версию нужно выложить на github.com (просьба не делать форк этого репозитория, дабы не плодить плагиат)
 
-###2. Необходимы функционал:
+###2. Необходимый функционал:
 
 2.1 Клиент и сервер tcp(telnet)/REST API - реализовано (интеграция redis, имплементация in-memory cache redis на базе ehcache)
 
@@ -57,6 +57,8 @@ postman -> docker сеть (контейнер 1 [spring-app] 8082, контей
 После установки требуется:
 
 - запустить через терминал redis-server, postman
+
+- клонировать репозиторий с проектом git clone https://github.com/Frazer-dl/avito
 
 - импортировать конфигурацию для проверок в postman "/avito/AVITO_ASSIGNMENT.postman_collection.json"
 
