@@ -5,7 +5,7 @@ import avito.assignment.redis.model.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class ITUtil {
+public final class ITUtill {
     public static final String REDIS_CONNECTION_OK = "PONG";
     public static final String ENTITY_CREATED = "<200 OK OK,Entity created successfully!,[]>";
 
@@ -34,7 +34,7 @@ public final class ITUtil {
     }
 
     public static List<Entity> saveEntity(Entity entity) {
-        return ITUtil.getEntities();
+        return ITUtill.getEntities();
     }
 
     public static List<Entity> delEntity(Long id) {
